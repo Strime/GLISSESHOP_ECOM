@@ -1,5 +1,8 @@
 /dist/
-/Shop-ejb/build/
-/Shop-ejb/dist/
+/Shop-ejb/build/*
+/Shop-ejb/dist/*
 /build/
-/Shop-war/dist/
+/nbproject/
+/Shop-ejb/nbproject/*
+/Shop-war/nbproject/*
+/Shop-war/dist/*
