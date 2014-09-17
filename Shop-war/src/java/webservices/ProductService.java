@@ -16,6 +16,7 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
@@ -79,4 +80,15 @@ public class ProductService {
         String res = bean.getProduct(prodID);
         return res;
     }
+    
+    
+    @POST
+    @Produces("application/json")
+    @Path("confirmOrder")
+    public String confirmOrder(@QueryParam("hash") String hash,
+            @QueryParam("mail") String mail,
+            @QueryParam("idRef") String items) {
+        return bean.confirmOrder(hash,mail,items);
+    }
+    
 }

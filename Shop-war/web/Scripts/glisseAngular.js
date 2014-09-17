@@ -10,6 +10,7 @@ angular.module('glisseAngular',
         'glisseAngular.signincontroller','glisseAngular.signinservices',
         'glisseAngular.registercontroller','glisseAngular.registerservices',
         'glisseAngular.filterscontroller','glisseAngular.filtersservices',
+        'glisseAngular.oldordercontroller', 'glisseAngular.orderservice'
     ]).config(function ($routeProvider) {
         //configure the routing rules here
         $routeProvider.when('/product/:id', {

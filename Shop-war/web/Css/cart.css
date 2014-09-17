@@ -149,8 +149,28 @@
 
 .cart-retour{
     float: left;
+    background: #6B9DDB;
+    border: grey solid 1px;
+    border-radius: 15px;
+    padding:5px 10px 5px 10px;
+    box-shadow: 2px 2px 2px #888888;
+}
+
+.cart-retour a, .cart-valider a{
+    text-decoration: none;
+    color: black;
 }
 
 .cart-valider{
     float: right;
+    background: #6B9DDB;
+    border: grey solid 1px;
+    border-radius: 15px;
+    padding:5px 10px 5px 10px;
+    box-shadow: 2px 2px 2px #888888;
+}
+
+.cart-valider:hover, .cart-retour:hover, .cart-retour a:hover, .cart-valider a:hover{
+    color: #666666;
+    cursor: pointer;
 }

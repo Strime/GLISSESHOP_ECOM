@@ -12,7 +12,4 @@ angular.module('glisseAngular.signincontroller',[]).controller('signInController
         })  
     };
     
-    $scope.loginSuccess = function() {
-        $scope.cart.addItem($scope.possibleRefs[0],$scope.countRefs,$scope.product);
-    }
 }]);
