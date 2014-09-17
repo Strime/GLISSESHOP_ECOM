@@ -91,4 +91,11 @@ public class ProductService {
         return bean.confirmOrder(hash,mail,items);
     }
     
+    @GET
+    @Produces("application/json")
+    @Path("getAllProductsByKeyword")
+    public String getAllProductsByKeyword(@QueryParam("keyword") String keyword) {
+        String res = bean.getAllProductsByKeyword(keyword);
+        return res;
+    }
 }

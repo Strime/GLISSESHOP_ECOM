@@ -46,5 +46,8 @@
             <img class="logoPanier" src="Media/Menu_logo_panier.png" alt=""/>
             <div class="logoPanierText">{{cart.items.length}}</div>
         </div></a>
-    <input class="search rounded" type="search" placeholder="Chercher..." name="recherche">
+        <div ng-controller="SearchController" >
+            <input class="search rounded" type="search" placeholder="Chercher..." name="recherche" ng-model="word" ng-change="refreshSearch()">
+        </div>
+    
 </div>
