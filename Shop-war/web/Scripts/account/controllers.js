@@ -1,10 +1,11 @@
 angular.module('glisseAngular.accountcontroller',[]).controller('AccountController',['$scope','accountResource','$routeParams','$cookies','$cookieStore',function($scope,accountResource,$routeParams,$cookies,$cookieStore){
 
+    $scope.account = $cookieStore.get('idSession');
 
     
     $scope.isLogin = function() {
-        var isLog = $cookieStore.get('idSession');
-        return isLog;
+        
+        return !($scope.account === undefined);
     };
     
     $scope.getSession = function() {
@@ -13,10 +14,12 @@ angular.module('glisseAngular.accountcontroller',[]).controller('AccountControll
     
     accountResource.createSession = function(account) {
         $cookieStore.put('idSession',account);
+        $scope.account = $cookieStore.get('idSession');
     };
     
     $scope.logout = function() {
         $cookieStore.remove('idSession');
+        $scope.account = $cookieStore.get('idSession');
     };
     
     
