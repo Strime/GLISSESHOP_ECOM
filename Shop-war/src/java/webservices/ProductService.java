@@ -79,4 +79,12 @@ public class ProductService {
         String res = bean.getProduct(prodID);
         return res;
     }
+    
+    @GET
+    @Produces("application/json")
+    @Path("getAllProductsByKeyword")
+    public String getAllProductsByKeyword(@QueryParam("keyword") String keyword) {
+        String res = bean.getAllProductsByKeyword(keyword);
+        return res;
+    }
 }
