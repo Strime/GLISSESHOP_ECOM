@@ -29,6 +29,14 @@ angular.module('glisseAngular.productscontroller',[]).controller('ProductsContro
                     $scope.loading = false;
                 });
             } 
+            else
+            {
+                $scope.loading=true;
+                productsResource.getAllProductsOfFamily(famID).then(function(data) {    
+                    $scope.products = data.data;
+                    $scope.loading=false;
+                });
+            }
         }
         else
         {
