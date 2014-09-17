@@ -1,51 +1,55 @@
 <div class="cart" ng-controller="CartController">
-    <!-- CART -->
-    <div ng-show="state === 'cart'">
-        <h1 class="cart-title">Panier</h1>
-        
-        <ul class="cart-table-title"><li>
-                <div class="cart-left-column">
-                    Produit
-                </div>
-
-                <div class="cart-quantity-column">
-                    Quantité
-                </div>
-
-                <div class="cart-price-column-title">
-                    Prix
-                </div>
-                    
-                <div class="cart-right-column">
-                    
-                </div>
-            </li></ul>
-        <ul class="cart-table">
-            <li ng-repeat="item in cart.items">
-                <div class="cart-left-column">
-                    <a href="/Shop-war/#/product/{{item.product.id}}">
-                    {{item.product.Label}}
-                    </a>
-                </div>
-
-                <div class="cart-quantity-column">
-                    {{item.count}}
-                </div>
-
-                <div class="cart-right-column">
-                    <div class="cart-suppr" ng-click="cart.removeItem(item.id)"><div class="cart-x">x</div></div>
-                </div>
-                
-                <div class="cart-price-column">
-                    {{item.product.Price * item.count}} €
-                </div>
-            </li>
-        </ul>
-        <div class="cart-total">Total : {{getTotal()}} €</div>
-        <div class="cart-space"></div>
-        <div class="cart-retour"><a href="/Shop-war/#/about">Retour à l'accueil</a></div>
-        <div class="cart-valider" ng-click="state = 'payment'"> Valider</div>
+    <!-- EMPTY CART -->
+    <div ng-show="emptyCart">
+        <h1>Votre panier est vide</h1>
     </div>
+    <!-- CART -->
+    <div ng-show="state === 'cart' && !emptyCart">
+            <h1 class="cart-title">Panier</h1>
+
+            <ul class="cart-table-title"><li>
+                    <div class="cart-left-column">
+                        Produit
+                    </div>
+
+                    <div class="cart-quantity-column">
+                        Quantité
+                    </div>
+
+                    <div class="cart-price-column-title">
+                        Prix
+                    </div>
+
+                    <div class="cart-right-column">
+
+                    </div>
+                </li></ul>
+            <ul class="cart-table">
+                <li ng-repeat="item in cart.items">
+                    <div class="cart-left-column">
+                        <a href="/Shop-war/#/product/{{item.product.id}}">
+                        {{item.product.Label}}
+                        </a>
+                    </div>
+
+                    <div class="cart-quantity-column">
+                        {{item.count}}
+                    </div>
+
+                    <div class="cart-right-column">
+                        <div class="cart-suppr" ng-click="cart.removeItem(item.id)"><div class="cart-x">x</div></div>
+                    </div>
+
+                    <div class="cart-price-column">
+                        {{item.product.Price * item.count}} €
+                    </div>
+                </li>
+            </ul>
+            <div class="cart-total">Total : {{getTotal()}} €</div>
+            <div class="cart-space"></div>
+            <div class="cart-retour"><a href="/Shop-war/#/about">Retour à l'accueil</a></div>
+            <div class="cart-valider" ng-click="state = 'payment'"> Valider</div>
+        </div>
     <!-- PAYMENT -->
     <div ng-show="state === 'payment'">
         <h1 class="cart-title">Paiement</h1>

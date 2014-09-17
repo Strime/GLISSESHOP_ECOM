@@ -20,26 +20,15 @@ import javax.persistence.EntityTransaction;
 public class DALOrder {
     
     public static void insertAccount(String items,EntityManager em) {
-        EntityTransaction tx = em.getTransaction();
-        tx.begin();
         em.persist(items);
-        tx.commit();
     }
     
     public static void insertOrder(Orders order,EntityManager em) {
-        EntityTransaction tx = em.getTransaction();
-       // for (Item item : order) {
-            tx.begin();
-            em.persist(order);
-            tx.commit();
-        //}
+        em.persist(order);
     }
 
     public static void insertItem(Item item, EntityManager em) {
-        EntityTransaction tx = em.getTransaction();
-        tx.begin();
         em.persist(item);
-        tx.commit();    
     }
     
     public static List<Orders> getOrders(String id,EntityManager em) {

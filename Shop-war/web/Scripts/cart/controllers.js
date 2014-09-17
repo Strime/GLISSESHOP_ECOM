@@ -34,6 +34,17 @@ angular.module('glisseAngular.cartcontroller',[]).controller('CartController',['
         }
     };
     
+    $scope.cart.isEmpty = function() {
+        return ($cookieStore.get('cartShop').items.length < 1);
+    }
+    
+    $scope.emptyCart = $scope.cart.isEmpty();
+    debugger;
+
+    $scope.cart.clearCart = function() {
+        $cookieStore.put('cartShop',{items : []});
+    }
+    
     $scope.getTotal = function() {
         var total = 0;
         for(var i = 0; i < $scope.cart.items.length; i++)
@@ -53,8 +64,10 @@ angular.module('glisseAngular.cartcontroller',[]).controller('CartController',['
             items.push({idRef : item.id, Count : item.count});
         }
         
-        $scope.orderResource.confirmOrder(c.Hash,c.Mail,items).then(function(data) { 
+        $scope.orderResource.confirmOrder(c.Hash,c.Mail,JSON.stringify(items)).then(function(data) { 
                         $scope.confirmOrder = data.data;
+                        debugger;
+                        $scope.cart.clearCart();
         });
         
     };
