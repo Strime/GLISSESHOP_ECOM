@@ -1,6 +1,6 @@
 .product-list {
     display : block;
-    //position : relative;
+    position : relative;
 }
 
 .products-container {
@@ -9,6 +9,18 @@
     display : block;
     text-align: center;
     
+}
+
+.products-table {
+    width: 100%;
+}
+
+.products-table td{
+    vertical-align:top;
+}
+
+.filters-inject {
+    float : left;
 }
 
 .products-item {
