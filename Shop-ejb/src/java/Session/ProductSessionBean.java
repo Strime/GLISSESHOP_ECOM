@@ -84,4 +84,10 @@ public class ProductSessionBean {
         List<VMProduct> vm = VMProduct.getInstance().toList(arr_prod);
         return vm.toString();
     }
+    
+    public String getAllProductsByKeyword(String keyword) {
+        List<Product> arr_prod = DALProduct.getByKeyword(keyword,em);
+        List<VMProduct> vm = VMProduct.getInstance().toList(arr_prod);
+        return vm.toString();
+    }
 }
