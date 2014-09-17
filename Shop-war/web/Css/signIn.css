@@ -6,32 +6,40 @@
 
 .formulaire{
     width : 300px;
-    height: 100px;
+    height: 127px;
     background: #6B9DDB;
     position: absolute;
     left: 50%;
-    text-align: center;
-    margin-left: -150px;
+    text-align: right;
+    margin-left: -165px;
     margin-top: 00px;
     border: grey solid 1px;
     border-radius: 15px;
     padding-top: 20px;
     box-shadow: 2px 2px 2px #888888;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
-.formulaire2{
-    width : 300px;
-    height: 220px;
-    background: #6B9DDB;
+.formulaire2 {
+    width: 314px;
+    height: 280px;
+    background: none repeat scroll 0% 0% #6B9DDB;
     position: absolute;
     left: 50%;
-    text-align: center;
-    margin-left: -150px;
+    text-align: right;
+    margin-left: -172px;
     margin-top: 0px;
-    border: grey solid 1px;
+    border: 1px solid #808080;
     border-radius: 15px;
     padding-top: 20px;
-    box-shadow: 2px 2px 2px #888888;
+    box-shadow: 2px 2px 2px #888;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.register-annuler{
+    text-align: left;
 }
 
 .input{

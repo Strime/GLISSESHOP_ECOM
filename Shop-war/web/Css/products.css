@@ -19,8 +19,18 @@
     vertical-align:top;
 }
 
+.products-table ul{
+    list-style-type: none;
+    font-size:14px;
+}
+
 .filters-inject {
-    float : left;
+    float: left;
+    width: 190px;
+}
+
+.filters-inject ul{
+    padding-left: 10px;
 }
 
 .products-item {
