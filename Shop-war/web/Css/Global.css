@@ -12,7 +12,7 @@ body {
 
 .content{
     margin-left: 20%;
-    min-height: 600px;
+    min-height: 400px;
     max-width: 60%;
 }
 
@@ -20,13 +20,6 @@ body {
 .top-image {
     height: 144px;
     background: none repeat scroll 0% 0% #6B9DDB;  
-}
-
-.footer {
-    height: 30px;
-    width: 60%;
-    background: none repeat scroll 0% 0% #6B9DDB;
-    margin-left: 20%;
 }
 
 .breadcrumb{
@@ -37,7 +30,7 @@ body {
 }
 
 .breadcrumb a{
-    text-decoration: none;
+    text-decoration: underline;
     color: black;
     
 }
@@ -49,4 +42,39 @@ body {
 
 .breadcrumbDiv{
     float: left;
+}
+
+.footer {
+    height: 21px;
+    width: 60%;
+    background: none repeat scroll 0% 0% #6B9DDB;
+    margin-left: 20%;
+    margin-top: 20px;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 9px;
+    position: relative;
+    clear: both;
+}
+
+.footer a {
+    color: black;
+}
+
+.footer a:hover {
+    color: #666666;
+}
+
+.about-title {
+    font-size: 24px;
+    text-align: center;
+}
+
+.about {
+    font-size: 14px;
+}
+
+.conditions {
+    font-size: 14px;
+    text-align: justify;
 }

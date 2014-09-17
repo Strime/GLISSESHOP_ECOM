@@ -53,17 +53,23 @@ and open the template in the editor.
     </head>
     <body >
         <div class="header">
-            <div class="top-image">
-                <img class="logo" alt="GlisseShop" src="Media/banniere.png">
-            </div>
-            <div class="menu-inject" ng-include="'Views/menu.html'"></div>
+            <a href="/Shop-war/#/about/">
+                <div class="top-image">
+                    <img class="logo" alt="GlisseShop" src="Media/banniere.png">
+                </div>
+            </a>            <div class="menu-inject" ng-include="'Views/menu.html'"></div>
             <div class="breadcrumb-inject" ng-include="'Views/breadCrumb.html'"></div>
 
         </div>
         <div class="content">
             <ng-view></ng-view>
         </div>
-        <div class="footer"></div>
-        
+
+        <div class="footer">
+            <a href="/Shop-war/#/about/">A propos de nous</a> -
+            <a href="/Shop-war/#/conditions/">Nous contacter</a> -
+            <a href="/Shop-war/#/conditions/">Conditions générales</a> -
+            © GlisseShop 2014
+        </div>        
     </body>
 </html>

@@ -66,6 +66,12 @@
     font-size: 12px; 
 }
 
+.caracLabelGrey {
+    color: grey;
+    font-size: 12px;
+    text-decoration: line-through;
+}
+
 .price {
     color: red;
     font-weight: bold;
@@ -91,6 +97,7 @@
     list-style : none;
     float : left;
     margin : 5px;
+    padding : 5px;
     border : solid 1px black;
     cursor : pointer;
     width : 50px;

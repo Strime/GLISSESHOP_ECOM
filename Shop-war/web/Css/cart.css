@@ -34,7 +34,7 @@
 }
 
 .cart-left-column{
-    width: 250px;
+    width: 175px;
     padding-left: 20px;
     float: left;
     text-align: left;
@@ -51,18 +51,39 @@
 
 .cart-price-column-title{
     float: right;
-    margin-right: 143px;
+    margin-right: 80px;
 }
     
 .cart-right-column{
-    width: 100px;
+    width: 30px;
     height: 30px;
     float: right;
-    margin-left: 30px;
+    margin-left: 40px;
 }
+
+.cart-suppr {
+    width: 10px;
+    height: 5px;
+    background: red;
+    border-radius: 3px;
+    border: solid 1px black;
+    margin-top: 5px;
+    padding-bottom: 5px;
+}
+
+.cart-suppr:hover {
+    cursor: pointer;
+}
+
+.cart-x {
+    margin-top: -7px;
+    color: black;
+    font-size: 18px;
+}
+
 .cart-total{
     float: right;
-    margin-right: 131px;
+    margin-right: 71px;
 }
 
 .cart-paiement{
@@ -85,7 +106,16 @@
     float: left;
 }
 
+.cart-numCB {
+    margin-left: 37px;
+}
+
 .cart-date{
+    width: 25px;
+    margin-left: 31px;
+}
+
+.cart-date2{
     width: 25px;
 }
 
@@ -95,7 +125,7 @@
 
 .cart-paiement-right{
     float: right;
-    margin-right: 115px;
+    margin-right: 80px;
     margin-top: 25px;
 }
 
@@ -121,6 +151,10 @@
     position: absolute;
     left: 50%;
     margin-left: -295px;
+}
+
+.cart-adressText {
+    margin-left: 35px;
 }
 
 .cart-validation{
@@ -168,6 +202,7 @@
     border-radius: 15px;
     padding:5px 10px 5px 10px;
     box-shadow: 2px 2px 2px #888888;
+    margin-bottom: 50px;
 }
 
 .cart-valider:hover, .cart-retour:hover, .cart-retour a:hover, .cart-valider a:hover{

@@ -38,6 +38,14 @@ angular.module('glisseAngular',
             templateUrl: 'Views/register.html',
             controller: 'registerController'
             
+        }).when('/conditions', {
+            templateUrl: 'Views/conditions.html',
+            controller: ''
+            
+        }).when('/about', {
+            templateUrl: 'Views/about.html',
+            controller: ''
+            
         })/*.otherwise({
             templateUrl: 'Views/products.html',
             controller: 'ProductsController'
