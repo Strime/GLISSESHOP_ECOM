@@ -1,0 +1,95 @@
+<div class="cart" ng-controller="CartController">
+    <!-- CART -->
+    <div ng-show="state === 'cart'">
+        <h1 class="cart-title">Panier</h1>
+        
+        <ul class="cart-table-title"><li>
+                <div class="cart-left-column">
+                    Produit
+                </div>
+
+                <div class="cart-quantity-column">
+                    Quantité
+                </div>
+
+                <div class="cart-price-column-title">
+                    Prix
+                </div>
+                    
+                <div class="cart-right-column">
+                    
+                </div>
+            </li></ul>
+        <ul class="cart-table">
+            <li ng-repeat="item in cart.items">
+                <div class="cart-left-column">
+                    <a href="/Shop-war/#/product/{{item.product.id}}">
+                    {{item.product.Label}}
+                    </a>
+                </div>
+
+                <div class="cart-quantity-column">
+                    {{item.count}}
+                </div>
+
+                <div class="cart-right-column">
+                    <button value="Remove" ng-click="cart.removeItem(item.id)">Supprimer</button>
+                </div>
+                
+                <div class="cart-price-column">
+                    {{item.product.Price * item.count}} €
+                </div>
+            </li>
+        </ul>
+        <div class="cart-total">Total : {{getTotal()}} €</div>
+        <div class="cart-space"></div>
+        <div class="cart-retour"><a href="/Shop-war/#/family/1"> Retour</a></div>
+        <div class="cart-valider" ng-click="state = 'payment'"> Valider</div>
+    </div>
+    <!-- PAYMENT -->
+    <div ng-show="state === 'payment'">
+        <h1 class="cart-title">Paiement</h1>
+        <div class="cart-paiement">   
+            <div class="cart-paiement-left">
+                <div>Numéro de carte :</div><div><input type="text"/></div>
+                <div>Date d'expiration : <input class="cart-date" type="text" placeholder="MM"/> / <input class="cart-date" type="text" placeholder="AA"/></div>
+                <div>Cryptogramme visuel : <input class="cart-crypto" class="cart-date" type="text"/></div>
+            </div>
+            <div class="cart-paiement-right"> 
+                <input class="cart-submit" type="submit" value="Paypal"/>
+            </div>
+        </div>
+        <div class="cart-space-paiement"></div>
+        <a class="cart-retour" href="" ng-click="state = 'cart'"> Retour</a>
+        <div class="cart-valider" ng-click="state = 'adress';payment = 'CB'">Valider</div>
+    </div>
+    <!-- ADRESS -->
+    <div ng-show="state === 'adress'">
+        <h1 class="cart-title">Livraison</h1>
+        <div class="cart-adresse">
+            <div class="input">Adresse : <input size="60" name="adress" type="text" ng-model="adress"></div>
+            <div>
+                Code postale : <input size="6" name="postcode" type="text" ng-model="postcode">
+                Ville : <input size="15" name="city" type="text" ng-model="city">
+            </div>
+        </div>
+        <div class="cart-space-adresse"></div> 
+        <a class="cart-retour" href="" ng-click="state = 'payment'"> Retour</a>
+        <div class="cart-valider" ng-click="state = 'validation'">Valider</div>
+    </div>
+    <!-- VALIDATION -->
+    <div ng-show="state === 'validation'">
+        <h1 class="cart-title">Validation</h1>
+        <div class="cart-validation">
+            <div>Adresse de livraison : {{adress}} {{postcode}} {{city}}</div>
+            <div>Paiement : {{payment}} </div>
+            <div>Total : {{getTotal()}} € </div>
+        </div>
+        <div class="cart-space-adresse"></div> 
+        <a class="cart-retour" href="" ng-click="state = 'adress'"> Retour</a>
+        <a class="cart-valider" href="/Shop-war/" ng-click="confirmCart()">Confirmer</a>
+    </div>
+    
+    
+    
+</div>

@@ -1,0 +1,16 @@
+<div ng-if="!loading" class="product-list" ng-controller="ProductsController">
+        <div class="filters-inject" ng-include="'Views/filters.html'"></div>
+        <div class="products-item" ng-repeat="product in products">
+             <a href="/Shop-war/#/product/{{product.id}}">
+                 <div class="hidden-name">
+                     <div>{{product.Label}}</div>
+                     <div>{{product.Price}} €</div>
+                 </div>
+            
+            <img class="products-media" src="MediasImg/{{product.Medias[0]}}" alt="{{product.Label}}">
+        </div>
+    
+</div>
+<div ng-if="loading">
+    <label>loading...</label>
+</div>

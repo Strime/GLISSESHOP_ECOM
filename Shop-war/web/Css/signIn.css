@@ -1,0 +1,39 @@
+.signin-title {
+    font-size: 20px;
+    font: black;
+    text-align: center;
+}
+
+.formulaire{
+    width : 300px;
+    height: 100px;
+    background: #6B9DDB;
+    position: absolute;
+    left: 50%;
+    text-align: center;
+    margin-left: -150px;
+    margin-top: 00px;
+    border: grey solid 1px;
+    border-radius: 15px;
+    padding-top: 20px;
+    box-shadow: 2px 2px 2px #888888;
+}
+
+.formulaire2{
+    width : 300px;
+    height: 220px;
+    background: #6B9DDB;
+    position: absolute;
+    left: 50%;
+    text-align: center;
+    margin-left: -150px;
+    margin-top: 0px;
+    border: grey solid 1px;
+    border-radius: 15px;
+    padding-top: 20px;
+    box-shadow: 2px 2px 2px #888888;
+}
+
+.input{
+    margin-bottom: 10px;
+}

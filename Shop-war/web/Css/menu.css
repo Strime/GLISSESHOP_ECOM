@@ -1,0 +1,172 @@
+.menu-inject {
+    height: 50px;
+    background: repeat-x url('../Media/Menu_background.png');
+    font-family: Verdana, sans-serif;
+}
+
+.menu-content {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 20%;
+    list-style-type:none;
+ }
+
+.menu-content a{
+    color : white;
+    text-decoration: none;
+ }
+
+.menu-content a:hover{
+    color : #4b44b4;
+ }
+ 
+.menu-item {
+    float:left; /*pour IE*/
+    display: inline;
+    margin-top: 6px;
+    padding-top: 6px;
+    min-width: 35px;
+    padding-bottom: 6px;
+    padding-right: 5px;
+    padding-left: 5px;
+    text-align: center;
+    float: left;
+ }
+ 
+ .menu-item:hover {
+    background: #4bc84b;
+ }
+ 
+.menu-item:hover > .menu-children {
+    display : block;
+    background: #4bc84b;
+}
+
+ .menu-children {
+    padding: 4px 0px;
+    list-style-type: none;
+    display: none;
+    width: 150px;
+    position: absolute;
+    margin-top: 6px;
+    margin-left: -5px;
+ }
+
+ .menu-children2 {
+    padding: 4px 0px;
+    list-style-type: none;
+    display: none;
+    width: 150px;
+    position: absolute;
+    margin-top: 6px;
+    margin-left: 0px;
+ }
+ 
+ .menu-children-item{
+     padding: 0;
+     text-align: center;
+ }
+ 
+ .logoAccueil{
+    display: block;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 50%;
+    margin-left: -32px;
+}
+.logoMenu {
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: -32px;
+}
+
+.logoMenuImg{
+    width: 77px;
+}
+
+.logoMenuHover{
+    display: none;
+    position: absolute;
+    left: 50%;
+    margin-left: -35px;
+    margin-top: -3px;
+    width: 100px;
+    z-index: 9999;
+}
+.logoAccueil:hover > .logoMenuHover {
+    display: block;
+}
+.logoMenuHover:hover{
+    display: block;
+}
+
+.monCompte{
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: 122px;
+    margin-top: 6px;
+    width: 34px;
+    height: 31px;
+}
+.monCompte a{
+    color : white;
+    text-decoration: none;
+ }
+.monCompte a:hover{
+    color :#4b44b4;
+ }
+
+.logoCompte {
+    display: block;
+    margin-top: -6px;
+    position: absolute;
+    margin-left: 3px;
+}
+
+.monCompte:hover{
+    background: #4bc84b;
+}
+
+.monCompte:hover > .menu-children2{
+    display: block;
+    position: absolute;
+    background: #4bc84b;
+    margin-top: 31px;
+}
+
+.logoPanier {
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: 160px;
+}
+
+.logoPanierText {
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: 178px;
+    color: red;
+    background: white;
+    border-radius: 5px;
+    border: 1px solid red;
+}
+
+.search { 
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: 195px;
+    margin-top: 10px;
+    padding: 0px 0px 0px 20px;
+    background: url('../Media/Menu_icon_loupe.png') no-repeat scroll 4px 1px transparent; 
+}
+
+.rounded { 
+	border-radius:15px; 
+        border: solid 2px white;
+}

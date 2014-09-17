@@ -1,0 +1,23 @@
+<div class="breadcrumb" ng-controller="BreadCrumbController">
+    
+    <div class="breadcrumbDiv"><a href="/Shop-war/">Accueil</a></div>
+    <div class="breadcrumbDiv" ng-show="loc[1] === 'family' && family.ParentLabel !== null">
+        > <a href="/Shop-war/#/family/{{family.ParentId}}">{{family.ParentLabel}}</a>
+        > {{family.Label}}
+    </div>
+    <div class="breadcrumbDiv" ng-show="loc[1] === 'family' && family.ParentLabel === null">
+        > {{family.Label}}
+    </div>
+    <div class="breadcrumbDiv" ng-show="loc[1] === 'product'">
+        > <a href="/Shop-war/#/family/{{product.ParentId}}">{{product.ParentLabel}}</a>
+        > <a href="/Shop-war/#/family/{{product.FamId}}">{{product.FamLabel}}</a>
+        > {{product.Label}}
+    </div>
+    <div class="breadcrumbDiv" ng-show="loc[1] === 'cart'">
+        > Panier
+    </div>
+    <div class="breadcrumbDiv" ng-show="loc[1] === 'account'">
+        > Compte
+    </div>
+    
+</div>

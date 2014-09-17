@@ -1,0 +1,156 @@
+.cart .cart-title{
+    font-size: 20px;
+    text-align: center;
+}
+
+.cart a:hover{
+    color : #666666;
+}
+
+.cart-table{
+    width: 100%;
+    list-style: none;
+    padding-left: 0;
+    
+}
+
+.cart-table-title{
+    list-style: none;
+    height: 25px;
+    padding-left: 0;
+    text-align: center;
+    
+}
+
+.cart-table li{
+    height: 30px;
+    background: #6B9DDB;
+    margin-bottom: 10px;
+    border: grey solid 1px;
+    border-radius: 15px;
+    padding-top: 10px;
+    box-shadow: 2px 2px 2px #888888;
+    text-align:center;
+}
+
+.cart-left-column{
+    width: 250px;
+    padding-left: 20px;
+    float: left;
+    text-align: left;
+}
+
+.cart-quantity-column{
+    float: left;
+    width: 80px;
+}
+
+.cart-price-column{
+    float: right;
+}
+
+.cart-price-column-title{
+    float: right;
+    margin-right: 143px;
+}
+    
+.cart-right-column{
+    width: 100px;
+    height: 30px;
+    float: right;
+    margin-left: 30px;
+}
+.cart-total{
+    float: right;
+    margin-right: 131px;
+}
+
+.cart-paiement{
+    height: 90px;
+    width: 590px;
+    background: #6B9DDB;
+    margin-bottom: 10px;
+    border: grey solid 1px;
+    border-radius: 15px;
+    padding-top: 10px;
+    padding-left: 20px;
+    box-shadow: 2px 2px 2px #888888;
+    text-align:left;
+    position: absolute;
+    left: 50%;
+    margin-left: -295px;
+}
+
+.cart-paiement-left{
+    float: left;
+}
+
+.cart-date{
+    width: 25px;
+}
+
+.cart-crypto{
+    width: 35px;
+}
+
+.cart-paiement-right{
+    float: right;
+    margin-right: 115px;
+    margin-top: 25px;
+}
+
+.cart-submit{
+    padding: 5px 10px 5px 10px;
+}
+
+.cart-space-paiement{
+    margin-top: 160px;
+}
+
+.cart-adresse{
+    height: 60px;
+    width: 590px;
+    background: #6B9DDB;
+    margin-bottom: 10px;
+    border: grey solid 1px;
+    border-radius: 15px;
+    padding-top: 10px;
+    padding-left: 20px;
+    box-shadow: 2px 2px 2px #888888;
+    text-align:left;
+    position: absolute;
+    left: 50%;
+    margin-left: -295px;
+}
+
+.cart-validation{
+    height: 70px;
+    width: 590px;
+    background: #6B9DDB;
+    margin-bottom: 10px;
+    border: grey solid 1px;
+    border-radius: 15px;
+    padding-top: 10px;
+    padding-left: 20px;
+    box-shadow: 2px 2px 2px #888888;
+    text-align:left;
+    position: absolute;
+    left: 50%;
+    margin-left: -295px;
+}
+
+.cart-space{
+    height: 40px;
+}
+
+.cart-space-adresse{
+    height: 100px;
+}
+
+.cart-retour{
+    float: left;
+}
+
+.cart-valider{
+    float: right;
+}

@@ -1,0 +1,18 @@
+<div class="account" ng-controller="AccountController" ng-if="isLogin()"> 
+    
+    <h1 class="account-title">Mon compte</h1>
+    
+    <div>
+        <p>Bonjour <b>{{getSession().Name}}</b> {{getSession().FirstName}}</p>
+        <p>Votre adresse est  : {{getSession().Adress}}</p>
+        <p>Votre email est  : {{getSession().Mail}}</p>
+        <p>Votre Hash est  : {{getSession().Hash}}</p>
+        
+    </div>
+    
+    
+</div>
+<div ng-if="!isLogin()">
+    Veuillez vous reconnecter.
+</div>
+

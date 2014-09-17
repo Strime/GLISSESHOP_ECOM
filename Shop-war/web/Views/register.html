@@ -1,0 +1,21 @@
+<div class="signin" ng-controller="registerController"> 
+    
+    <h1 class="signin-title">S'enregistrer</h1>
+    
+    <span class="msg-error" ng-show="formulaire.pwd2.$error.pwmatch">
+		Passwords don't match.
+    </span>
+    
+    <div class="formulaire2">
+        <div class="input"><input type="text" placeholder="Nom" ng-model="name"/></div>
+        <div class="input"><input type="text" placeholder="Prénom" ng-model="surname"/></div>
+        <div class="input"><input type="text" placeholder="Adresse" ng-model="adress"/></div>
+        <div class="input"><input type="text" placeholder="Email" ng-model="mail"/></div>
+        <div class="input"><input type="password" placeholder="Mot de passe" ng-model="pwd"/></div>
+        <div class="input"><input type="password" placeholder="Confirmez votre mot de passe" ng-model="pwd2" pw-check="pwd"/></div>
+        
+        <input type="submit" ng-click="register()" value="envoyer"/>
+    </div>
+   
+    
+</div>

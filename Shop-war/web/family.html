@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="glisseAngular">
+    <head>
+        <base href="Shop-war">
+        <title>GlisseShop - votre magasin en ligne de glisse!</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link href="Css/Global.css" rel="stylesheet" type="text/css"/>
+        <link href="Css/menu.css" rel="stylesheet" type="text/css"/>
+        <link href="Css/products.css" rel="stylesheet" type="text/css"/>
+        
+        <script src="Scripts/angular/angular.js" type="text/javascript"></script>
+        <script src="Scripts/angular/angular-route.js" type="text/javascript"></script>
+        <script src="Scripts/angular/angular-resource.js" type="text/javascript"></script>
+    
+        <script src="Scripts/menu/services.js" type="text/javascript"></script>
+        <script src="Scripts/menu/controllers.js" type="text/javascript"></script>
+        <script src="Scripts/products/services.js" type="text/javascript"></script>
+        <script src="Scripts/products/controllers.js" type="text/javascript"></script>
+        <script src="Scripts/glisseAngular.js" type="text/javascript"></script>
+        <script src="Scripts/family.js" type="text/javascript"></script>
+        
+    </head>
+    <body>
+    
+    
+        <div class="header">
+            <div class="top-image"></div>
+            <div class="menu-inject" ng-include="'Views/menu.html'"></div>
+        </div>
+        <div class="content">
+            
+            <div class="products-inject" ng-include="'Views/products.html'"></div>
+        </div>
+        <div class="footer"></div>
+    </body>
+</html>

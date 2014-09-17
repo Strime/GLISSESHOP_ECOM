@@ -1,0 +1,19 @@
+<div class="signin" ng-controller="signInController"> 
+    
+    <h1 class="signin-title">Se connecter</h1>
+    
+    <div class="formulaire">
+        <div class="input"><input type="text" placeholder="Email" ng-model="mail"/></div>
+        <div class="input"><input type="password" placeholder="Mot de passe" ng-model="pwd"/></div>
+        <input type="submit" ng-click="signIn()" value="envoyer"/>
+    </div>
+    
+    <p ng-if="!account.error">
+         {{account.Name}}
+    </p>
+   <p ng-if="account.error">
+         {{account.error}}
+    </p>
+   
+    
+</div>

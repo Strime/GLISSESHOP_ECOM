@@ -1,0 +1,52 @@
+<div ng-if="!loading" class="product" ng-controller="ProductController">
+<div class="my-carousel">
+    <!--<div class="product-media-big">
+    <div class="arrow leftArrow" ng-click="goLeft()"><</div>
+    <div class="arrow rightArrow" ng-click="goRight()">></div>
+    <img src="MediasImg/{{currentMedia}}"
+    alt="{{product.Label}}">
+    </div>-->
+    <div class="super-container">
+        <div class="arrow leftArrow" ng-click="goRight()"><</div>
+        <div class="arrow rightArrow" ng-click="goLeft()">></div>
+        <div class="product-media-big" ng-repeat="media in product.Medias" style="left: {{$index*250}}px">
+            <img class="product-media" src="MediasImg/{{media}}"
+            alt="{{product.Label}}">
+        </div>
+    </div>
+    <ul class="products-list">
+        <li class="product-item media-{{$index}}" ng-repeat="media in product.Medias" ng-click="changeMedia($index,this)">
+            <img class="product-media" src="MediasImg/{{media}}"
+            alt="{{product.Label}}">
+        </li>
+    </ul>
+</div>
+    
+    <div class="right-column">
+        <img class="separateur" src="Media/Produit_separateur.png" alt=""/>
+        <div class="name">{{product.Label}}</div>
+        <div class="price">{{product.Price}} €</div>
+        <ul class="caracList">
+            <li ng-repeat="carac in product.TypeCaracs">
+                <label>{{carac.Label}}</label>
+                <table>
+                    <th></th><th></th><th></th>
+                    <tr ng-repeat="value in carac.Values">
+                        <td  ng-click="changeCarac(carac,value)"><div class="checkbox {{value.selected}}"></div></td>
+                        <td class="caracLabel">{{value.Value}}</td>
+                        <td ng-if="!testAvailable(value) && !onstart">indisponible</td>
+                    </tr>
+                </table>
+            </li>
+            
+        </ul>
+         <p>{{product.Description}}</p>
+         <div ng-show="possibleRefs.length == 1" class="cart-button">
+             <input type="number" ng-model="countRefs" name="count" max="100" min="1"/>
+             <button ng-click="addToCart()">Ajouter au panier</button>
+         </div>
+    </div>
+</div>
+<div ng-if="loading">
+    <label>loading...</label>
+</div>

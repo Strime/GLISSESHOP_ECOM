@@ -1,0 +1,12 @@
+<div class="filters" ng-controller="FiltersController">
+    <ul>
+        <li ng-repeat="typeCarac in filters">{{typeCarac.name}}
+            <ul>
+                <li ng-repeat="value in typeCarac.values">
+                    <input type="checkbox" ng-model="value.selected" ng-change="refreshFilters()">
+                    {{value.text}}
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>

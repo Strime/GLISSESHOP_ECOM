@@ -1,0 +1,47 @@
+<div class="top-menu" ng-controller="MenuController">
+    <ul class="menu-content">
+        <li class="menu-item" ng-repeat="family in families">
+            <a href="/Shop-war/#/family/{{family.id}}">{{family.Label}}</a>
+            <ul class="menu-children">
+                <li class="menu-children-item" ng-repeat="child in family.Children">
+                    <a href="/Shop-war/#/family/{{child.id}}">{{child.Label}}</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <div class="logoAccueil">
+        <img class="logoMenu" src="Media/Menu_logo_accueil.png" alt="blabla"/>
+        <a class="logoMenuHover" href="/Shop-war">
+            <img class="logoMenuImg" src="Media/Menu_logo_accueil_hover.png" alt="blabla"/>
+        </a>
+    </div>
+    <div class="monCompte" ng-controller="AccountController">
+        <img class="logoCompte" src="Media/Menu_logo_compte.png" alt="" />
+        
+        <ul class="menu-children2" ng-if="!isLogin()">
+            <li class="menu-children-item">
+                <a href="/Shop-war/#/signIn">Se connecter</a>
+            </li>
+            <li class="menu-children-item">
+                <a href="/Shop-war/#/register">S'enregistrer</a>
+            </li>
+        </ul>
+        
+        <ul class="menu-children2" ng-if="isLogin()">
+            <li class="menu-children-item">
+                <a href="/Shop-war/#/account">Mon Compte</a>
+            </li>
+            <li class="menu-children-item">
+                <a href="" ng-click="logout()">Se déconnecter</a>
+            </li>
+        </ul>
+        
+       
+    </div>
+    <a href="/Shop-war/#/cart" >
+        <div ng-controller="CartController">
+            <img class="logoPanier" src="Media/Menu_logo_panier.png" alt=""/>
+            <div class="logoPanierText">{{cart.items.length}}</div>
+        </div></a>
+    <input class="search rounded" type="search" placeholder="Chercher..." name="recherche">
+</div>
