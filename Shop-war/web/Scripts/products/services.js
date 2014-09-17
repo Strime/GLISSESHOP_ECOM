@@ -16,6 +16,12 @@ angular.module('glisseAngular.productsservices',['ngResource']).factory('product
                 method: "GET",
                 params : { famID : famID, possibleValues : possVal, typeCaracs : typeCarac }
             });
+        },
+        getAllProductsByKeyword : function(keyword) {return $http({
+                url : '/Shop-war/webresources/product/getAllProductsByKeyword',
+                method: "GET",
+                params : { keyword : keyword }
+            });
         }
     }
 }]);

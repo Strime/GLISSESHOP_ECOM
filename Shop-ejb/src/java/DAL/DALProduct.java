@@ -38,4 +38,9 @@ public class DALProduct {
         List<Product> arr_prod = (List<Product>)em.createQuery("SELECT DISTINCT c.referenceidReference.productidReference FROM Carac c WHERE c.typeCaracidCarac IN :types AND c.value IN :values").setParameter("types", possTypes).setParameter("values", possValues).getResultList();
         return arr_prod;
     }
+
+    public static List<Product> getByKeyword(String keyword, EntityManager em) {
+       List<Product> arr_prod = (List<Product>)em.createQuery("SELECT p FROM Product p WHERE p.label LIKE :keyword").setParameter("keyword", keyword+"%").getResultList();
+       return arr_prod;
+    }
 }
