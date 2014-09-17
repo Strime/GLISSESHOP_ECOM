@@ -4,4 +4,5 @@ angular.module('glisseAngular.cartservices',['ngResource']).factory('cartResourc
         if(!cart)
             $cookieStore.put('cartShop',{items : []});
         return $cookieStore.get('cartShop');
+        
 }]);

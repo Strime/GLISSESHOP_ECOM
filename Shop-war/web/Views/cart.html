@@ -43,7 +43,7 @@
         </ul>
         <div class="cart-total">Total : {{getTotal()}} €</div>
         <div class="cart-space"></div>
-        <div class="cart-retour"><a href="/Shop-war/#/family/1"> Retour</a></div>
+        <div class="cart-retour"><a href="/Shop-war/"> Retour</a></div>
         <div class="cart-valider" ng-click="state = 'payment'"> Valider</div>
     </div>
     <!-- PAYMENT -->
@@ -60,7 +60,7 @@
             </div>
         </div>
         <div class="cart-space-paiement"></div>
-        <a class="cart-retour" href="" ng-click="state = 'cart'"> Retour</a>
+        <div class="cart-retour"  ng-click="state = 'cart'"> Retour</div>
         <div class="cart-valider" ng-click="state = 'adress';payment = 'CB'">Valider</div>
     </div>
     <!-- ADRESS -->
@@ -74,7 +74,7 @@
             </div>
         </div>
         <div class="cart-space-adresse"></div> 
-        <a class="cart-retour" href="" ng-click="state = 'payment'"> Retour</a>
+        <div class="cart-retour" ng-click="state = 'payment'"> Retour</div>
         <div class="cart-valider" ng-click="state = 'validation'">Valider</div>
     </div>
     <!-- VALIDATION -->
@@ -86,8 +86,13 @@
             <div>Total : {{getTotal()}} € </div>
         </div>
         <div class="cart-space-adresse"></div> 
-        <a class="cart-retour" href="" ng-click="state = 'adress'"> Retour</a>
-        <a class="cart-valider" href="/Shop-war/" ng-click="confirmCart()">Confirmer</a>
+        <div class="cart-retour" ng-click="state = 'adress'"> Retour</div>
+        <div class="cart-valider" ng-click="confirmCart()">Confirmer</div>
+        
+        <p ng-if="confirmOrder.error">
+              {{confirmOrder.error}}
+        </p>
+         
     </div>
     
     

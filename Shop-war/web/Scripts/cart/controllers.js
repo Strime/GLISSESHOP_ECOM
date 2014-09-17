@@ -1,11 +1,14 @@
-angular.module('glisseAngular.cartcontroller',[]).controller('CartController',['$scope','cartResource','$routeParams','$cookies','$cookieStore',function($scope,cartResource,$routeParams,$cookies,$cookieStore){
+angular.module('glisseAngular.cartcontroller',[]).controller('CartController',['$scope','cartResource','$routeParams','$cookies','$cookieStore','orderResource','accountResource',function($scope,cartResource,$routeParams,$cookies,$cookieStore,orderResource,accountResource){
     $scope.state = 'cart';
     $scope.adress = '';
     $scope.postcode = '';
     $scope.city = ''; 
     $scope.payment = '';
     
+    $scope.compte = accountResource;
     $scope.cart = cartResource;
+    $scope.orderResource = orderResource;
+    
     $scope.cart.addItem = function(refID,count,product) {
         var found = false;
         for(var i = 0; i < $scope.cart.items.length; i++)
@@ -42,14 +45,18 @@ angular.module('glisseAngular.cartcontroller',[]).controller('CartController',['
     };
     
     $scope.confirmCart = function() {
-                        debugger;
+        var c = $cookieStore.get('idSession');
+        var items = [];
+        for(var i = 0; i < $scope.cart.items.length; i++)
+        {
+            var item = $scope.cart.items[i];
+            items.push({idRef : item.id, Count : item.count});
+        }
         
-        $scope.cart.confirmOrder($scope.cart.items).then(function(data) { 
-                        debugger;
-                        $scope.account = data.data;
+        $scope.orderResource.confirmOrder(c.Hash,c.Mail,items).then(function(data) { 
+                        $scope.confirmOrder = data.data;
         });
-        $scope.cart.items = [];
-        $cookieStore.put('cartShop',$scope.cart);
+        
     };
     
 }]);

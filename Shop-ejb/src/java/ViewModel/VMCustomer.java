@@ -7,6 +7,7 @@
 package ViewModel;
 
 import Entity.Customer;
+import Entity.Orders;
 import Session.AccountSessionBean;
 import flexjson.JSON;
 import java.math.BigInteger;
@@ -24,7 +25,7 @@ import java.util.logging.Logger;
  */
 public class VMCustomer extends VMAbstract<VMCustomer,Customer> {
     
-    public Integer id;
+  public Integer id;
 
     public String Name;
 
@@ -36,6 +37,8 @@ public class VMCustomer extends VMAbstract<VMCustomer,Customer> {
     
     public String Hash;
     
+    public List<VMOrders> Orders;
+    
     public VMCustomer(Customer customer) {
        id = customer.getIdCustomer();
        Name = customer.getName();
@@ -43,6 +46,10 @@ public class VMCustomer extends VMAbstract<VMCustomer,Customer> {
        Mail = customer.getMail();
        Adress = customer.getAdress();
        Hash = to_hash(customer.getMail() + customer.getPassword());
+            
+        if(customer.getOrdersList().size() > 0) {
+            Orders = toVMOrdersList(customer.getOrdersList());
+        }
     }
     
     VMCustomer() {
@@ -67,6 +74,15 @@ public class VMCustomer extends VMAbstract<VMCustomer,Customer> {
     public VMCustomer to(Customer element) {
         return new VMCustomer(element);
     }
+    
+    public static List<VMOrders> toVMOrdersList(List<Orders> list) {
+        List<VMOrders> converted = new ArrayList<>();
+        for(Orders order : list) {
+            converted.add(new VMOrders(order));
+        }
+        return converted;
+    }
+
 
     private String to_hash(String chaine) {
         String res="";

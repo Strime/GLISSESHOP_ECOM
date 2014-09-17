@@ -17,11 +17,16 @@ import java.util.List;
  */
 public class VMReference {
     public Integer id;
+    public String Label;
+    public Integer Prix;
+    public Integer Stock;
     
     private static JSONSerializer json = new JSONSerializer().prettyPrint(true);
     
     public VMReference(Reference reference) {
         id = reference.getIdReference();
+        Label = reference.getProductidReference().getLabel();
+        Prix = reference.getProductidReference().getPrice();
     }
     
     public static List<VMReference> toVMReferenceList(List<Reference> list) {

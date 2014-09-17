@@ -18,12 +18,10 @@ import javax.persistence.EntityTransaction;
  */
 public class DALAccount {
     public static Customer getAccountByMail(String mail,EntityManager em) {
-        Vector listRes = (Vector) em.createQuery("SELECT c FROM Customer c Where c.mail = '"+mail+"'").getResultList();
+        Customer c;
+        c = (Customer) em.createQuery("SELECT c FROM Customer c Where c.mail = '"+mail+"'").getSingleResult();
         
-        if(listRes.isEmpty()) 
-            return null;
-        else 
-            return (Customer) listRes.get(0);
+        return c;
     }
     
     public static void insertAccount(Customer c,EntityManager em) {

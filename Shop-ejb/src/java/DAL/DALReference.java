@@ -20,4 +20,10 @@ public class DALReference {
         List<Reference> arr_ref = (List<Reference>)em.createQuery("SELECT r FROM Reference r WHERE r.productidReference.famillyidProduct.idFamilly = "+famID + " OR (r.productidReference.famillyidProduct.famillyidFamilly IS NOT NULL AND r.productidReference.famillyidProduct.famillyidFamilly.idFamilly = "+famID+")").getResultList();
         return arr_ref;
     }
+   
+    public static Reference getReference(String id,EntityManager em) {
+        Reference arr_prod = (Reference)em.createQuery("SELECT r FROM Reference r Where r.idReference = "+id).getResultList().get(0);
+        return arr_prod;
+    } 
+
 }
