@@ -27,6 +27,7 @@ body {
     color: black;
     height:20px;
     font-size: 12px;
+    margin-bottom: 10px;
 }
 
 .breadcrumb a{

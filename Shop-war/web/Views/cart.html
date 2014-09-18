@@ -53,11 +53,34 @@
     <!-- PAYMENT -->
     <div ng-show="state === 'payment'">
         <h1 class="cart-title">Paiement</h1>
-        <div class="cart-paiement">   
+        <div class="cart-paiement">
             <div class="cart-paiement-left">
-                <div>Numéro de carte :<input class="cart-numCB" type="text"/></div>
-                <div>Date d'expiration : <input class="cart-date" type="text" placeholder="MM"/> / <input class="cart-date2" type="text" placeholder="AA"/></div>
-                <div>Cryptogramme visuel : <input class="cart-crypto" class="cart-date" type="text"/></div>
+                <table class="products-table">    
+                    <tr>
+                        <td>
+                            Numéro de carte :
+                        </td>
+                        <td>
+                            <input type="text"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Date d'expiration : 
+                        </td>
+                        <td>
+                            <input class="cart-date" type="text" placeholder="MM"/> / <input class="cart-date" type="text" placeholder="AA"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Cryptogramme visuel : 
+                        </td>
+                        <td>
+                            <input class="cart-crypto" type="text"/>
+                        </td>
+                    </tr>
+                </table>
             </div>
             <div class="cart-paiement-right"> 
                 <input class="cart-submit" type="submit" value="Paypal"/>
@@ -71,11 +94,25 @@
     <div ng-show="state === 'adress'">
         <h1 class="cart-title">Livraison</h1>
         <div class="cart-adresse">
-            <div class="input">Adresse : <input class="cart-adressText" size="60" name="adress" type="text" ng-model="adress"></div>
-            <div>
-                Code postale : <input size="6" name="postcode" type="text" ng-model="postcode">
-                Ville : <input size="15" name="city" type="text" ng-model="city">
-            </div>
+            <table class="cart-adress-table">    
+                    <tr>
+                        <td>
+                            Adresse : 
+                        </td>
+                        <td>
+                            <input size="60" name="adress" type="text" ng-model="adress">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Code postale : 
+                        </td>
+                        <td>
+                            <input size="6" name="postcode" type="text" ng-model="postcode">
+                            Ville : <input size="15" name="city" type="text" ng-model="city">
+                        </td>
+                    </tr>
+            </table>
         </div>
         <div class="cart-space-adresse"></div> 
         <div class="cart-retour" ng-click="state = 'payment'">Retour aux informations de paiement</div>

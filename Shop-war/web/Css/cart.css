@@ -87,7 +87,7 @@
 }
 
 .cart-paiement{
-    height: 90px;
+    height: 100px;
     width: 590px;
     background: #6B9DDB;
     margin-bottom: 10px;
@@ -106,16 +106,7 @@
     float: left;
 }
 
-.cart-numCB {
-    margin-left: 37px;
-}
-
 .cart-date{
-    width: 25px;
-    margin-left: 31px;
-}
-
-.cart-date2{
     width: 25px;
 }
 
@@ -137,24 +128,24 @@
     margin-top: 160px;
 }
 
-.cart-adresse{
-    height: 60px;
-    width: 590px;
-    background: #6B9DDB;
+.cart-adresse {
+    height: 70px;
+    width: 610px;
+    background: none repeat scroll 0% 0% #6B9DDB;
     margin-bottom: 10px;
-    border: grey solid 1px;
+    border: 1px solid #808080;
     border-radius: 15px;
     padding-top: 10px;
-    padding-left: 20px;
-    box-shadow: 2px 2px 2px #888888;
-    text-align:left;
+    padding-left: 10px;
+    box-shadow: 2px 2px 2px #888;
+    text-align: left;
     position: absolute;
     left: 50%;
     margin-left: -295px;
 }
 
-.cart-adressText {
-    margin-left: 35px;
+.cart-adress-table td {
+    min-width: 105px;
 }
 
 .cart-validation{
