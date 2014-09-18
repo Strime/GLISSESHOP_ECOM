@@ -64,8 +64,9 @@ public class VMProduct extends VMAbstract<VMProduct,Product> {
         if(product.getReferenceList().size() > 0) {
             Children = VMReference.toVMReferenceList(product.getReferenceList());
         }
-        else
+        else {
             Children = new ArrayList<VMReference>();
+        }
         
     }
     

@@ -79,3 +79,10 @@ body {
     font-size: 14px;
     text-align: justify;
 }
+
+.fixed {
+    position:fixed;
+    top:0;
+    z-index: 999999999999999;
+    width: 100%;
+}

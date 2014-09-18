@@ -83,7 +83,8 @@ public class ProductSessionBean {
         Product prod = DALProduct.getProduct(id,em);
         
         JSONSerializer json = new JSONSerializer();
-        return json.deepSerialize(new VMProduct(prod));
+        VMProduct p = new VMProduct(prod);
+        return json.deepSerialize(p);
     }
     
     public String getAll() {
