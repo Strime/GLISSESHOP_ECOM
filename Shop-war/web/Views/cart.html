@@ -35,6 +35,10 @@
                     <div class="cart-quantity-column">
                         {{item.count}}
                     </div>
+                    
+                    <div class="cart-quantity-column" ng-repeat="carac in item.caracs" style="margin-top : -8px">
+                        <div>{{carac.Label}}:</div><div>{{carac.Value}}</div>
+                    </div>
 
                     <div class="cart-right-column">
                         <div class="cart-suppr" ng-click="cart.removeItem(item.id)"><div class="cart-x">x</div></div>

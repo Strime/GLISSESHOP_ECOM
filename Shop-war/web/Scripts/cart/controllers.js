@@ -8,6 +8,29 @@ angular.module('glisseAngular.cartcontroller',[]).controller('CartController',['
     $scope.compte = accountResource;
     $scope.acc = $cookieStore.get('idSession');
     $scope.cart = cartResource;
+    for(var v = 0; v < $scope.cart.items.length; v++)
+    {
+        var item = $scope.cart.items[v];
+        var product = item.product;
+        item.caracs = [];
+        for(var j = 0; j < product.TypeCaracs.length; j++)
+        {
+            var type = product.TypeCaracs[j];
+            var newType = {Label : type.Label, Value : ''};
+            for(var value = 0; value < type.Values.length; value++)
+            {
+                for(var ref = 0; ref < type.Values[value].References.length; ref++)
+                {
+                    if(type.Values[value].References[ref] === item.id)
+                   newType.Value = type.Values[value].Value;
+                }
+               
+            }
+            item.caracs.push(newType);
+        
+        }
+    }
+
     $scope.orderResource = orderResource;
     
     $scope.cart.addItem = function(refID,count,product) {
