@@ -18,9 +18,21 @@ import javax.persistence.EntityTransaction;
  * @author wojaka
  */
 public class DALAccount {
-    public static Customer getAccountByMail(String mail,EntityManager em) {
+
+    /**
+     *
+     * @param mail
+     * @param em
+     * @return
+     */
+    public static Customer getAccountByMail(String mail,EntityManager em) throws Exception{
         Customer c;
-        c = (Customer) em.createQuery("SELECT c FROM Customer c Where c.mail = '"+mail+"'").getSingleResult();
+        try {
+                   c = (Customer) em.createQuery("SELECT c FROM Customer c Where c.mail = '"+mail+"'").getSingleResult();
+ 
+        }catch(Exception e ){
+            throw e;
+        }
         List<Orders> l = c.getOrdersList();
         return c;
     }

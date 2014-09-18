@@ -118,7 +118,14 @@ public class ProductSessionBean {
     
         public String confirmOrder(String hash, String mail,String items) {
             
-        Customer compte = DALAccount.getAccountByMail(mail, em);
+        Customer compte=null;
+        try {
+            compte = DALAccount.getAccountByMail(mail, em);
+        } catch (Exception ex) {
+            Logger.getLogger(ProductSessionBean.class.getName()).log(Level.SEVERE, null, ex);
+            JSONSerializer json = new JSONSerializer();
+            return json.deepSerialize(new ErrorImpl("Erreur Email ! hack spotted"));
+        }
         
         if(!cryp(compte.getMail()+compte.getPassword()).equals(hash)){
             JSONSerializer json = new JSONSerializer();

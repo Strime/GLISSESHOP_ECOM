@@ -4,3 +4,11 @@
     font: black;
     text-align: center;
 }
+
+.account-corps {
+    background: #6B9DDB;
+    border: grey solid 1px;
+    border-radius: 15px;
+    padding-left: 15px;
+    box-shadow: 2px 2px 2px #888888;
+}

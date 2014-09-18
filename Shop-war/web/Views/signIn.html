@@ -3,10 +3,11 @@
     <h1 class="signin-title">Se connecter</h1>
     
     <div class="formulaire">
+        <div class="asterisk">Les champs munis d'une astérisque sont obligatoires</div>
         <table class="products-table">    
             <tr>
                 <td>
-                    Email : 
+                    Email<sup>*</sup> : 
                 </td>
                 <td>
         <div class="input"><input type="text" placeholder="Email" ng-model="mail"/></div>
@@ -14,7 +15,7 @@
             </tr>
             <tr>
                 <td>
-                    Mot de passe : 
+                    Mot de passe<sup>*</sup> : 
                 </td>
                 <td>
         <div class="input"><input type="password" placeholder="Mot de passe" ng-model="pwd"/></div>
@@ -25,11 +26,14 @@
                     <a href="/Shop-war/"><input type="submit" ng-click="register()" value="Annuler"/></a>
                 </td>
                 <td>
-        <input type="submit" ng-click="signIn()" value="Connexion"/>
+                    <input type="submit" ng-click="signIn()" value="Connexion"/>
                 </td>
             </tr>
         </table>
-         <div class="error-message" ng-show="account.error">
+        <div class="registerOnSignin">
+            <a href="/Shop-war/#/register">S'enregistrer</a>    
+        </div>
+        <div class="error-message" ng-show="account.error">
          {{account.error}}
         </div>
     </div>

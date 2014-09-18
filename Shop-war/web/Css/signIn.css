@@ -6,7 +6,7 @@
 
 .formulaire{
     width : 300px;
-    height: 127px;
+    height: 150px;
     background: #6B9DDB;
     position: absolute;
     left: 50%;
@@ -42,6 +42,19 @@
     text-align: left;
 }
 
+.register-annuler a{
+    text-decoration: none;
+}
+
 .input{
     margin-bottom: 10px;
+}
+
+.registerOnSignin a{
+    font-size: 14px;
+    color: black;
+}
+
+.registerOnSignin a:hover {
+    color: #666666;
 }

@@ -47,19 +47,22 @@ public class AccountSessionBean {
 		+ "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
     
     public String getAccount(String mail, String password) {
-        Customer c = DALAccount.getAccountByMail(mail,em);
         String encrypted = null;
-
+        Customer c = null;
         try {
+             c = DALAccount.getAccountByMail(mail,em);
+
             MessageDigest md = MessageDigest.getInstance("MD5");
             md.update(password.getBytes(),0,password.length());
             encrypted = new BigInteger(1, md.digest()).toString(16);
-        } catch (NoSuchAlgorithmException ex) {
+        } catch (Exception ex) {
             Logger.getLogger(AccountSessionBean.class.getName()).log(Level.SEVERE, null, ex);
+            JSONSerializer json = new JSONSerializer();
+            return json.deepSerialize(new ErrorImpl("Adresse mail invalide"));
         }
         if(c==null) {  
             JSONSerializer json = new JSONSerializer();
-            return json.deepSerialize(new ErrorImpl("unknown login"));
+            return json.deepSerialize(new ErrorImpl("Adresse mail inconnue"));
         }
         else if(c.getPassword().equals(encrypted)) {
             JSONSerializer json = new JSONSerializer();
@@ -67,7 +70,7 @@ public class AccountSessionBean {
         }
         
         JSONSerializer json = new JSONSerializer();
-        return json.deepSerialize(new ErrorImpl("bad password"));
+        return json.deepSerialize(new ErrorImpl("Mauvais mot de passe"));
         
     }
     

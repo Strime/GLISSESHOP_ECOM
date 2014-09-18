@@ -90,12 +90,21 @@ input {
 }
 
 .error-message {
-    background: rgba(116, 55, 55, 1);
+    background: rgba(196, 56, 56, 1);
     line-height: 50px;
     text-align: center;
     margin-top: 50px;
     
 } 
+
+.error-message2 {
+    background: rgba(196, 56, 56, 1);
+    line-height: 50px;
+    text-align: center;
+    margin-top: 350px;
+    
+} 
+
 .fixed {
     position:fixed;
     top:0;
@@ -106,5 +115,26 @@ input {
 .fixed-filter {
     position: fixed;
     top: 50px;
-    z-index: 99999999;
+}
+
+.langue {
+    position: absolute;
+    margin-left: 70%;
+}
+
+.orders-corps {
+    background: #6B9DDB;
+    border: grey solid 1px;
+    border-radius: 15px;
+    padding-left: 15px;
+    box-shadow: 2px 2px 2px #888888;
+}
+
+.orders-corps  ul{
+    list-style: none;
+}
+
+.asterisk{
+    font-size: 12px;
+    margin-bottom: 5px;
 }

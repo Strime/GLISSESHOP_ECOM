@@ -7,10 +7,11 @@
     </span>
 
     <div class="formulaire2">
+        <div class="asterisk">Les champs munis d'une astérisque sont obligatoires</div>
         <table class="products-table">    
         <tr>
             <td>
-                Nom : 
+                Nom<sup>*</sup> : 
             </td>
             <td>
                 <div class="input"><input type="text" placeholder="Nom" ng-model="name"/></div>
@@ -18,7 +19,7 @@
         </tr>
         <tr>
             <td>
-                Prénom : 
+                Prénom<sup>*</sup> : 
             </td>
             <td>
              <div class="input"><input type="text" placeholder="Prénom" ng-model="surname"/></div>
@@ -26,7 +27,7 @@
         </tr>
         <tr>
             <td>
-                Adresse : 
+                Adresse<sup>*</sup> : 
             </td>
             <td>
                 <div class="input"><input type="text" placeholder="Adresse" ng-model="adress"/></div>
@@ -34,7 +35,7 @@
         </tr>
         <tr>
             <td>
-                Email : 
+                Email<sup>*</sup> : 
             </td>
             <td>
                 <div class="input"><input type="text" placeholder="Email" ng-model="mail"/></div>
@@ -42,7 +43,7 @@
         </tr>
         <tr>
             <td>
-                Mot de passe : 
+                Mot de passe<sup>*</sup> : 
             </td>
             <td>
                 <div class="input"><input type="password" placeholder="Mot de passe" ng-model="pwd"/></div>
@@ -50,13 +51,11 @@
         </tr>
         <tr>
             <td>
-                Confirmation du mot de passe : 
+                Confirmation du mot de passe<sup>*</sup> : 
             </td>
             <td>
                 <div class="input"><input type="password" placeholder="Confirmez votre mot de passe" ng-model="pwd2" pw-check="pwd"/></div>
-                <div class="msg-error" ng-show="errorTest" >
-		{{errorTest}}
-            </div>
+                
             </td>
         </tr>
         <tr>
@@ -72,6 +71,8 @@
         </table>
         
     </div>
-   
+   <div class="error-message2" ng-show="errorTest" >
+		{{errorTest}}
+            </div>
     
 </div>
