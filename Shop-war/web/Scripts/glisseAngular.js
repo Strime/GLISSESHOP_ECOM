@@ -50,10 +50,10 @@ angular.module('glisseAngular',
             templateUrl: 'Views/orders.html',
             controller: ''
             
-        })/*.otherwise({
+        }).otherwise({
             templateUrl: 'Views/products.html',
             controller: 'ProductsController'
-      })*/;
+      });
     
         
 });

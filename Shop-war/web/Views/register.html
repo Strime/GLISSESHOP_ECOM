@@ -5,7 +5,7 @@
     <span class="msg-error" ng-show="formulaire.pwd2.$error.pwmatch">
 		Passwords don't match.
     </span>
-    
+
     <div class="formulaire2">
         <table class="products-table">    
         <tr>
@@ -54,16 +54,22 @@
             </td>
             <td>
                 <div class="input"><input type="password" placeholder="Confirmez votre mot de passe" ng-model="pwd2" pw-check="pwd"/></div>
+                <div class="msg-error" ng-show="errorTest" >
+		{{errorTest}}
+            </div>
             </td>
         </tr>
         <tr>
+            
             <td class="register-annuler">
-                <a href="/Shop-war/"><input type="submit" disabled="true" ng-click="register()" value="Annuler"/></a>
+                <a href="/Shop-war/"><input type="submit" ng-click="register()" value="Annuler"/></a>
             </td>
             <td>
-                <input type="submit" ng-click="register()" value="Creer Mon Compte"/>
+                <input type="submit" ng-click="register()" ng-disabled="isValid()" value="Creer Mon Compte"/>
             </td>
+            
         </tr>
+        </table>
         
     </div>
    

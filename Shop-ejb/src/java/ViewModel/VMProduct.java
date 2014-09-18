@@ -54,8 +54,32 @@ public class VMProduct extends VMAbstract<VMProduct,Product> {
         Description = product.getLongLabel();
         Price = product.getPrice();
         DicoCarac dico = product.getFamillyidProduct().getDicoCaracidFamilly();
-        if(dico != null)
-        TypeCaracs = VMTypeCarac.getInstance().toVMTypeCaracList(dico.getTypeCaracList(),product.getReferenceList());
+        
+        if(dico != null) {
+           TypeCaracs = VMTypeCarac.getInstance().toVMTypeCaracList(dico.getTypeCaracList(),product.getReferenceList());
+        } else {
+            TypeCaracs = new ArrayList<>();
+        }
+        if(product.getFamillyidProduct().getFamillyidFamilly() != null)
+        {
+            DicoCarac dicoParent = product.getFamillyidProduct().getFamillyidFamilly().getDicoCaracidFamilly();
+            if(dicoParent != null) {
+                List<VMTypeCarac> newList = VMTypeCarac.getInstance().toVMTypeCaracList(dicoParent.getTypeCaracList(),product.getReferenceList());
+                for(VMTypeCarac tc : newList) {
+                    boolean found = false;
+                    for(VMTypeCarac tc2 : TypeCaracs) {
+                        if(tc.id == tc2.id) {
+                            found = true;
+                        }
+                    }
+                    if(!found)
+                            TypeCaracs.add(tc);
+                    
+                }
+            }
+        }
+        
+        
         List<VMMedia> list =  VMMedia.getInstance().toList(product.getDicoMediaidProduct().getMediaList());
         
         for(VMMedia media : list) {
@@ -64,9 +88,8 @@ public class VMProduct extends VMAbstract<VMProduct,Product> {
         if(product.getReferenceList().size() > 0) {
             Children = VMReference.toVMReferenceList(product.getReferenceList());
         }
-        else {
-            Children = new ArrayList<VMReference>();
-        }
+        else
+            Children = new ArrayList<>();
         
     }
     

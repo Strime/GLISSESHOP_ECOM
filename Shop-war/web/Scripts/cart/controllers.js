@@ -6,6 +6,7 @@ angular.module('glisseAngular.cartcontroller',[]).controller('CartController',['
     $scope.payment = '';
     
     $scope.compte = accountResource;
+    $scope.acc = $cookieStore.get('idSession');
     $scope.cart = cartResource;
     $scope.orderResource = orderResource;
     
@@ -42,6 +43,7 @@ angular.module('glisseAngular.cartcontroller',[]).controller('CartController',['
 
     $scope.cart.clearCart = function() {
         $cookieStore.put('cartShop',{items : []});
+        $scope.cart.items = [];
     };
     
     $scope.getTotal = function() {
@@ -65,7 +67,6 @@ angular.module('glisseAngular.cartcontroller',[]).controller('CartController',['
         
         $scope.orderResource.confirmOrder(c.Hash,c.Mail,JSON.stringify(items)).then(function(data) { 
                         $scope.confirmOrder = data.data;
-                        debugger;
                         $scope.cart.clearCart();
         });
         
