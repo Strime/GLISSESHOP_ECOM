@@ -6,7 +6,7 @@
         <h1 class="cart-title">Mes Commandes</h1>
         <ul >
             <li ng-repeat="order in account.Orders">
-                <div>Commande n°{{order.idOrder}}</div>
+                <div>Commande {{order.idOrder}}</div>
                 <div>
                     <ul>
                         <li ng-repeat="item in order.itemList">

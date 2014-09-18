@@ -1,6 +1,7 @@
 angular.module('glisseAngular.accountcontroller',[]).controller('AccountController',['$scope','accountResource','$routeParams','$cookies','$cookieStore','$location',function($scope,accountResource,$routeParams,$cookies,$cookieStore,$location){
 
     $scope.account = $cookieStore.get('idSession'); 
+    debugger;
     
     $scope.isLogin = function() {
         return !($scope.account === undefined);
