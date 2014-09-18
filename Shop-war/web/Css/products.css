@@ -26,11 +26,10 @@
 
 .filters-inject {
     float: left;
-    border: grey solid 1px;
-    border-radius: 5px;
-    padding-top: 10px;
-    box-shadow: 2px 2px 2px #888888;
+    border: solid 1px rgb(156, 198, 236);
+    box-shadow: 3px 2px 8px rgb(54, 82, 99);
     background: white;
+    margin-top: 7px;
 }
 
 .filters-inject ul{
