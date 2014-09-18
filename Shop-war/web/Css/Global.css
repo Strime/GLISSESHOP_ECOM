@@ -102,3 +102,9 @@ input {
     z-index: 99999999;
     width: 100%;
 }
+
+.fixed-filter {
+    position: fixed;
+    top: 50px;
+    z-index: 99999999;
+}

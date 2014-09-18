@@ -55,10 +55,13 @@ and open the template in the editor.
                     if ($(window).scrollTop() > 144) {
                         $('.menu-inject').addClass('fixed');
                         $('.content').css('padding-top','50px');
+                        $('.filters-inject').addClass('fixed-filter');
                     }
                     else {
                         $('.menu-inject').removeClass('fixed');
                         $('.content').css('padding-top','0px');
+                        $('.filters-inject').removeClass('fixed-filter');
+                        
                     }
                });
         </script>
