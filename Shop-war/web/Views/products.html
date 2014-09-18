@@ -1,11 +1,11 @@
-<div ng-show="!loading" class="product-list" ng-controller="ProductsController">
+<div class="product-list" ng-controller="ProductsController">
     <table class="products-table">    
         <tr>
             <td>
                 <div class="filters-inject" ng-include="'Views/filters.html'"></div>
             </td>
             <td>
-                <div class="products-container">
+                <div ng-show="!loading" class="products-container">
                 <div class="products-item" ng-repeat="product in products">
                      <a href="/Shop-war/#/product/{{product.id}}">
                          <div class="hidden-name">
@@ -16,10 +16,12 @@
                     <img class="products-media" src="MediasImg/{{product.Medias[0]}}" alt="{{product.Label}}">
                 </div>
                 </div>
+                <div ng-if="loading">
+                    <label>loading...</label>
+                </div>
             </td>
         </tr>
     </table>
+    <div ng-show="products.length < 1">Aucun produit disponible dans cette section</div>
 </div>
-<div ng-if="loading">
-    <label>loading...</label>
-</div>
+

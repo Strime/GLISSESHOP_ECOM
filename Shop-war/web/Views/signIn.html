@@ -22,18 +22,19 @@
             </tr>
             <tr>
                 <td class="register-annuler">
-                    <a href="/Shop-war/"><input type="submit" disabled="true" ng-click="register()" value="Annuler"/></a>
+                    <a href="/Shop-war/"><input type="submit" ng-click="register()" value="Annuler"/></a>
                 </td>
                 <td>
         <input type="submit" ng-click="signIn()" value="Connexion"/>
                 </td>
             </tr>
         </table>
+         <div class="error-message" ng-show="account.error">
+         {{account.error}}
+        </div>
     </div>
     
-   <p ng-if="account.error">
-         {{account.error}}
-    </p>
+  
    
     
 </div>

@@ -79,3 +79,19 @@ body {
     font-size: 14px;
     text-align: justify;
 }
+
+input {
+    cursor : pointer;
+}
+.success-message {
+    background: lightgreen;
+    line-height: 50px;
+    text-align: center;
+}
+
+.error-message {
+    background: rgba(116, 55, 55, 1);
+    line-height: 50px;
+    text-align: center;
+    margin-top: 50px;
+}

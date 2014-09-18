@@ -1,3 +1,15 @@
+<script type="text/javascript">
+    $(document).scroll(function() {  
+        if($('.menu-inject').scrollTop() > 250) {
+            debugger;
+            $('.menu-inject').css('position','fixed');
+            $('.menu-inject').css('top','0');
+        }
+        else {
+        }
+    });
+</script>
+
 <div class="top-menu" ng-controller="MenuController">
     <ul class="menu-content">
         <li class="menu-item" ng-repeat="family in families">
@@ -47,7 +59,7 @@
             <div class="logoPanierText">{{cart.items.length}}</div>
         </div></a>
         <div ng-controller="SearchController" >
-            <input class="search rounded" type="search" placeholder="Chercher..." name="recherche" ng-model="word" ng-change="refreshSearch()">
+            <input class="search rounded" type="search" placeholder="Chercher..." name="recherche" ng-model="word" ng-enter="refreshSearch()">
         </div>
     
 </div>

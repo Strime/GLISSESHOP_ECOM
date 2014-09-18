@@ -48,7 +48,8 @@
             <div class="cart-total">Total : {{getTotal()}} €</div>
             <div class="cart-space"></div>
             <div class="cart-retour"><a href="/Shop-war/#/about">Retour à l'accueil</a></div>
-            <div class="cart-valider" ng-click="state = 'payment'"> Valider</div>
+            <div class="cart-valider" ng-click="state = 'payment'" ng-show="acc"> Valider</div>
+            <div class="cart-valider" ng-show="!acc"><a href='/Shop-war/#/signIn' >Valider(Se connecter)</a></div>
         </div>
     <!-- PAYMENT -->
     <div ng-show="state === 'payment'">
@@ -88,7 +89,8 @@
         </div>
         <div class="cart-space-paiement"></div>
         <div class="cart-retour"  ng-click="state = 'cart'">Retour au panier</div>
-        <div class="cart-valider" ng-click="state = 'adress';payment = 'CB'">Valider</div>
+        <div class="cart-valider" ng-click="state = 'adress';payment = 'CB'" ng-show="acc">Valider</div>
+        <div class="cart-valider" ng-show="!acc"><a href='/Shop-war/#/signIn' >Valider(Se connecter)</a></div>
     </div>
     <!-- ADRESS -->
     <div ng-show="state === 'adress'">
@@ -116,10 +118,11 @@
         </div>
         <div class="cart-space-adresse"></div> 
         <div class="cart-retour" ng-click="state = 'payment'">Retour aux informations de paiement</div>
-        <div class="cart-valider" ng-click="state = 'validation'">Valider</div>
+        <div class="cart-valider" ng-click="state = 'validation'" ng-show="acc">Valider</div>
+        <div class="cart-valider" ng-show="!acc"><a href='/Shop-war/#/signIn' >Valider(Se connecter)</a></div>
     </div>
     <!-- VALIDATION -->
-    <div ng-show="state === 'validation'">
+    <div ng-show="state === 'validation' && !confirmOrder">
         <h1 class="cart-title">Validation</h1>
         <div class="cart-validation">
             <div>Adresse de livraison : {{adress}} {{postcode}} {{city}}</div>
@@ -128,10 +131,11 @@
         </div>
         <div class="cart-space-adresse"></div> 
         <div class="cart-retour" ng-click="state = 'adress'">Retour à l'adresse de livraison</div>
-        <div class="cart-valider"><a href="/Shop-war/" ng-click="confirmCart()">Confirmer</a></div>
-            <p ng-if="confirmOrder.error">
-              {{confirmOrder.error}}
-        </p>
+        <div class="cart-valider" ng-show="!acc"><a href='/Shop-war/#/signIn' >Confirmer(Se connecter)</a></div>
+        <div class="cart-valider" ng-click="confirmCart()" ng-show="acc">Confirmer</div>
+    </div>
+    <div class="success-message" ng-if="confirmOrder.error[0] === 'i'">
+            Votre commande a bien été validée, merci!
     </div>
     
     
