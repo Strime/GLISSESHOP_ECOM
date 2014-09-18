@@ -46,6 +46,10 @@ angular.module('glisseAngular',
             templateUrl: 'Views/about.html',
             controller: ''
             
+        }).when('/orders', {
+            templateUrl: 'Views/orders.html',
+            controller: ''
+            
         })/*.otherwise({
             templateUrl: 'Views/products.html',
             controller: 'ProductsController'

@@ -1,15 +1,18 @@
 <div class="cart" ng-controller="OldOrderController">
+    <div ng-show="emptyOrders">
+        Vous n'avez aucun historique de commandes.
+    </div>
     <div>
         <h1 class="cart-title">Mes Commandes</h1>
-        <ul>
+        <ul >
             <li ng-repeat="order in account.Orders">
-                <div>{{order.idOrder}}</div>
+                <div>Commande n°{{order.idOrder}}</div>
                 <div>
                     <ul>
                         <li ng-repeat="item in order.itemList">
                             {{item.Count}}
                             {{item.Reference.Label}}
-                            Total = {{item.Reference.Prix * item.Count}}
+                            Total = {{item.Reference.Prix * item.Count}} €
                         </li>
                     </ul>
                 </div>
