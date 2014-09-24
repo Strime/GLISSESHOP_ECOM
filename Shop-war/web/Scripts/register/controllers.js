@@ -31,6 +31,14 @@ angular.module('glisseAngular.registercontroller',[]).controller('registerContro
         registerResource.setAccount($scope.name,$scope.surname,$scope.adress,$scope.mail,$scope.pwd,$scope.pwd2)
                 .then(function(data) { 
                         $scope.account = data.data;
+
+                        if(data.data.error && data.data.error[0]==='i'){
+                            $scope.success=true;
+                        }
+                        if(data.data.error && data.data.error[0]==='B'){
+                            $scope.errorMail=true;
+                        }
+                        debugger;
         })  
     };
 }]);

@@ -29,7 +29,7 @@ angular.module('glisseAngular.productcontroller',[]).controller('ProductControll
         }
     }
     
-    MrGaetanCasseCouille = function() {
+    functionTestChecked = function() {
         for(var j = 0; j < $scope.product.TypeCaracs.length; j++)
         {
                 for(var i = 0; i < $scope.product.TypeCaracs[j].Values.length; i++)
@@ -61,7 +61,7 @@ angular.module('glisseAngular.productcontroller',[]).controller('ProductControll
         $scope.possibleRefs = newPossible;
         $scope.onstart = false;
         
-        MrGaetanCasseCouille();
+        functionTestChecked();
         
     }
     

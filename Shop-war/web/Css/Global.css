@@ -89,6 +89,13 @@ input {
     text-align: center;
 }
 
+.success-message2 {
+    background: lightgreen;
+    line-height: 50px;
+    text-align: center;
+    margin-top: 350px;
+}
+
 .error-message {
     background: rgba(196, 56, 56, 1);
     line-height: 50px;

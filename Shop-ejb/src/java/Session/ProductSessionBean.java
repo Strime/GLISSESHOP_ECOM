@@ -47,7 +47,7 @@ public class ProductSessionBean {
     public String getCount() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    public class Zeub {
+    public class ItemJSONSerialise {
         public String idRef;
         public String Count;
     }
@@ -150,11 +150,11 @@ public class ProductSessionBean {
             items = "[" + items + "]";
         }
         
-        java.lang.reflect.Type listType = new TypeToken<ArrayList<Zeub>>(){}.getType();
-        List<Zeub> listOfItems = new Gson().fromJson(items, listType);
+        java.lang.reflect.Type listType = new TypeToken<ArrayList<ItemJSONSerialise>>(){}.getType();
+        List<ItemJSONSerialise> listOfItems = new Gson().fromJson(items, listType);
 
         
-        for (Zeub listOfItem : listOfItems) {
+        for (ItemJSONSerialise listOfItem : listOfItems) {
             Reference r = DALReference.getReference(listOfItem.idRef, em);
             Item item = new Item();
             item.setCount(Integer.parseInt(listOfItem.Count));
